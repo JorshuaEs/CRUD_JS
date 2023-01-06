@@ -43,32 +43,21 @@ const table = document.querySelector("[data-table]");
 //Update - Put/Patch
 //Delete - Delete
 
+
+//Fetch API
 const listaClientes = () => {
-    const promise = new Promise((resolve,reject) =>{
-        const http = new XMLHttpRequest();
-        http.open("GET", "http://localhost:3000/perfil");//Obtener
-
-        http.send();//Envia la petición hacia el servidor que se encuentra en la url puesta anteriormente
-
-        http.onload = () => {  //una vez que cargue o termine de recibir una respuesta ejecuta la funcion
-            const response = JSON.parse(http.response);
-            if(http.status >= 400){
-                reject(response);
-            }else{
-                resolve(response);
-            }
-        }
-    });
-
-    return promise;
+    return fetch('http://localhost:3000/perfil').then( respuesta => {
+        return respuesta.json();
+    })
 };
 
-listaClientes().then((data) => {
-    data.forEach( perfil => {
-        const nuevaLinea = crearNuevaLinea(perfil.nombre,perfil.email);
-        table.appendChild(nuevaLinea);
-    });
-}).catch((error) => alert("ocurrió un error"));
+listaClientes()
+    .then((data) => {
+        data.forEach( perfil => {
+            const nuevaLinea = crearNuevaLinea(perfil.nombre,perfil.email);
+            table.appendChild(nuevaLinea);
+        });
+    }).catch((error) => alert("ocurrió un error"));
 
 
 
