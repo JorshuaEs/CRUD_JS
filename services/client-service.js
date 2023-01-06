@@ -45,11 +45,8 @@ const table = document.querySelector("[data-table]");
 
 
 //Fetch API
-const listaClientes = () => {
-    return fetch('http://localhost:3000/perfil').then( respuesta => {
-        return respuesta.json();
-    })
-};
+const listaClientes = () => fetch('http://localhost:3000/perfil').then( respuesta => respuesta.json());
+    
 
 listaClientes()
     .then((data) => {
