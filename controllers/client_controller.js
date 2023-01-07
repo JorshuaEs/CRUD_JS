@@ -1,7 +1,5 @@
 import { clientServices } from "../services/client-service.js";
 
-console.log(clientServices);
-
 const crearNuevaLinea = (nombre,email,id) => {
     const linea = document.createElement("tr");
    const contenido = `
