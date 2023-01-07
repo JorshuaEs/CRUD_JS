@@ -4,6 +4,21 @@
       "nombre": "Alejandro Reyes",
       "email": "harland@alura.com",
       "id": 1
+    },
+    {
+      "nombre": "pedro@alura.com",
+      "email": "Pedro",
+      "id": "8e97dc04-7646-4790-b48f-cca784cdcec0"
+    },
+    {
+      "nombre": "Pedro",
+      "email": "pedro@alura.com",
+      "id": "bb4bfb53-490b-482e-941e-ca46f87a28ba"
+    },
+    {
+      "nombre": "Pedro",
+      "email": "pedro@alura.com",
+      "id": "513d2b05-d095-40d4-9595-af82d90e1fd5"
     }
   ]
 }
